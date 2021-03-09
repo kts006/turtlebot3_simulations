@@ -41,13 +41,14 @@ def generate_launch_description():
             PythonLaunchDescriptionSource(
                 os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
             ),
-            launch_arguments={'world': world}.items(),
+            launch_arguments={'world': world, 'verbose': '--verbose'}.items(),
         ),
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
                 os.path.join(pkg_gazebo_ros, 'launch', 'gzclient.launch.py')
             ),
+            launch_arguments={'verbose': '--verbose'}.items(),
         ),
 
         ExecuteProcess(
